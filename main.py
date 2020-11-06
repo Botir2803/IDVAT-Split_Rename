@@ -61,9 +61,9 @@ def rename_pdfs(root_directory, extract_folder):
 				os.rename(path, rename_to + "//" + f"{cust}  { inv_num} { date}  { year} .pdf")
 
 #folder paths from where we get the files
-root_dir = r"C:\Users\brakhimov\PycharmProjects\pdfSplitRename1\initial"
-extract_to = r"C:\Users\brakhimov\PycharmProjects\pdfSplitRename1\extract"
-rename_to = r"C:\Users\brakhimov\PycharmProjects\pdfSplitRename1\final"
+root_dir = r"C:\Users\*****\******\pdfSplitRename1\initial"
+extract_to = r"C:\Users\*****\******\pdfSplitRename1\extract"
+rename_to = r"C:\Users\*****\******\pdfSplitRename1\final"
 
 #function run
 split_pdf_pages(root_dir, extract_to)
