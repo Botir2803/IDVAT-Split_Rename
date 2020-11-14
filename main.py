@@ -45,7 +45,7 @@ def rename_pdfs(root_directory, extract_folder):
 				for page in PDFPage.create_pages(doc):
 					interpreter.process_page(page)
 				num = output_string.getvalue()
-				for cust_name in re.findall("PT.\s+[A-Za-z]+\s+[A-Za-z]+\s+[A-Za-z]+", num):
+				for cust_name in re.findall("PT.\s+[A-Za-z]+\s+[A-Za-z]+\s+[A-Za-z]+", num) or re.findall("PT\s+[A-Za-z]+\s+[A-Za-z]+\s+[A-Za-z]+", num):
 					cust = cust_name[0:50]
 				for inv in re.findall("#[0-9]+", num):
 					inv_num = inv[1:]
