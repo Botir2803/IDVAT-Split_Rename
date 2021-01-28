@@ -1,4 +1,6 @@
 # Libraries that we need to intall - PyPDF2, pdfminer
+pip install PyPDF2
+pip install pdfminer
 
 # Import the nessesary packages
 from io import StringIO
@@ -25,11 +27,11 @@ def split_pdf_pages(root_directory, extract_folder):
                                 #Loop through the file and split the pages
 				for i in range(open_pdf.numPages):
 					output = PyPDF2.PdfFileWriter()
-					output.addPage(opened_pdf.getPage(i))
+					output.addPage(open_pdf.getPage(i))
 					with open(extract_to+ "\\" + basename + "-%s.pdf" % i, "wb") as output_pdf:
 						output.write(output_pdf)
 
-# 2nd function is for renaming each tax slip pdf with Customer name, Invoice number, Respective month and Current year
+# 2nd function is for renaming each extracted tax invoice with Customer name, Invoice number, Respective month and Current year
 def rename_pdfs(root_directory, extract_folder):
 	for root, dirs, files in os.walk(root_directory):
 		for filename in files:
